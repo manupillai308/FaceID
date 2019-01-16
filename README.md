@@ -6,3 +6,6 @@ Clone the repository and add images of personnel inside the ```/images/``` folde
 
 eg.
 ```/images/james.png``` for a person named James
+
+
+![output](/output.gif)
