@@ -12,10 +12,9 @@ def detect_face(image, q, l, encodings):
 	boxes = []
 	for person in pred:
 		boxes.append(person['box'])
-	im = frame[:]
 	encodes = []
 	for box in boxes:
-		encode = face_recognition.face_encodings(frame[...,[2,1,0]][max(0,box[1]-40):min(box[1]+box[3]+40,frame.shape[0]), max(box[0]-40, 0):min(box[0]+box[2]+40, frame.shape[1]),:])
+		encode = face_recognition.face_encodings(image[...,[2,1,0]][max(0,box[1]-40):min(box[1]+box[3]+40,image.shape[0]), max(box[0]-40, 0):min(box[0]+box[2]+40, image.shape[1]),:])
 		if encode:
 			encodes.append(encode[0])
 		else:
